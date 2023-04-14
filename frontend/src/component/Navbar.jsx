@@ -25,7 +25,7 @@ const Navbar = () => {
    
     let token=JSON.parse(localStorage.getItem("token"))
    let userid=JSON.parse(localStorage.getItem("userid"));
-   let username=JSON.parse(localStorage.getItem("username"));
+
 
     //logout
     const handleLogout=()=>{
@@ -107,14 +107,14 @@ else{
         <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
           <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
            
-            <Heading w={40} onClick={hanldeallPost2} cursor={'pointer'}>
+            <Heading w="300px" onClick={hanldeallPost2} cursor={'pointer'}>
             {/* <Link to="/post"> */}
-            New Post
+            Add New Event
                 {/* </Link> */}
                 </Heading>
 
                 <Heading w={40} onClick={hanldeallPost} cursor={'pointer'}>
-            All Post
+            All Event
                 </Heading>
             
             <Flex alignItems={'center'}>
@@ -153,7 +153,7 @@ else{
                     <MenuDivider />
 
                     <MenuItem>
-                    <Link to="/">
+                    <Link to="/signup">
                     {token?"":"Sign up"}
                 </Link>
                     </MenuItem>
@@ -164,11 +164,6 @@ else{
                 </Link>
                     </MenuItem>
 
-                    <MenuItem>
-                      <Link to="/update_name">
-                    {token?"Update Name":""}
-                    </Link>
-                    </MenuItem>
 
                     <MenuItem onClick={handleLogout}> 
                     
