@@ -25,7 +25,12 @@ userRouter.post("/login",async(req,res)=>{
             const user2=await UserModel.find({password});
             if(user2.length>0)
             {
-                res.send(user[0]);
+                const token = jwt.sign({userID:user[0]._id,
+                    email: user[0].email
+                }, 
+                    'masai');
+                res.send({"token":token,"email":email})
+                // console.log(token)
             }
             else{
                 res.send("wrong password")
