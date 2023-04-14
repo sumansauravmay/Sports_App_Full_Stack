@@ -42,7 +42,7 @@ const [data,setData]=useState([])
             <Container key={item._id}
              mt='6' spacing='3'>
                  <Image
-      src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+      src="https://i.postimg.cc/4NZtGt1j/Whats-App-Image-2023-04-14-at-21-53-51.jpg"
       alt='Green double couch with wooden legs'
       borderRadius='lg'
     />
@@ -59,6 +59,11 @@ const [data,setData]=useState([])
         View Details
       </Button>
       </Link>
+
+
+      <Button variant='solid' colorScheme='blue'>
+        Delete Event
+      </Button>
     </ButtonGroup>
   </CardFooter>
 

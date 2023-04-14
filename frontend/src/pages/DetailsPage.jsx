@@ -34,11 +34,14 @@ import {
 const DetailsPage = () => {
 
     const {id}=useParams()
-const [itemDetails,setItemDetails]=React.useState({});
+const [itemDetails,setItemDetails]=React.useState([]);
 
 React.useEffect(()=>{
-    return axios.get(`http://localhost:4000/${id}`)
-        .then((res)=>setItemDetails(res.data))
+    axios.get(`http://localhost:4000/${id}`)
+        .then((res)=>{
+            setItemDetails(res.data)
+            console.log(res.data)
+        })
 },[id])
 
 
@@ -47,72 +50,90 @@ React.useEffect(()=>{
 
 <Container maxW={'7xl'} p="12">
         <Heading as="h1">Details of Event</Heading>
-        
+        {
+          itemDetails.map((item)=>(
+            <Box key={item._id}
+            marginTop={{ base: '1', sm: '5' }}
+            display="flex"
+            flexDirection={{ base: 'column', sm: 'row' }}
+            justifyContent="space-between">
+            <Box
+              display="flex"
+              flex="1"
+              marginRight="3"
+              position="relative"
+              alignItems="center">
+              <Box
+                width={{ base: '100%', sm: '85%' }}
+                zIndex="2"
+                marginLeft={{ base: '0', sm: '5%' }}
+                marginTop="5%">
+                <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                  <Image
+                    borderRadius="lg"
+                    src={
+                      'https://i.postimg.cc/4NZtGt1j/Whats-App-Image-2023-04-14-at-21-53-51.jpg'
+                    }
+                    alt="some good alt text"
+                    objectFit="contain"
+                  />
+                </Link>
+              </Box>
+              <Box zIndex="1" width="100%" position="absolute" height="100%">
                 <Box
-                marginTop={{ base: '1', sm: '5' }}
-                display="flex"
-                flexDirection={{ base: 'column', sm: 'row' }}
-                justifyContent="space-between">
-                <Box
-                  display="flex"
-                  flex="1"
-                  marginRight="3"
-                  position="relative"
-                  alignItems="center">
-                  <Box
-                    width={{ base: '100%', sm: '85%' }}
-                    zIndex="2"
-                    marginLeft={{ base: '0', sm: '5%' }}
-                    marginTop="5%">
-                    <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                      <Image
-                        borderRadius="lg"
-                        src={
-                          'https://www.adobe.com/content/dam/offers-homepage/us/en/homepage/twitter_adobe.png'
-                        }
-                        alt="some good alt text"
-                        objectFit="contain"
-                      />
-                    </Link>
-                  </Box>
-                  <Box zIndex="1" width="100%" position="absolute" height="100%">
-                    <Box
-                      backgroundSize="20px 20px"
-                      opacity="0.4"
-                      height="100%"
-                    />
-                  </Box>
-                </Box>
-                <Box
-                  display="flex"
-                  flex="1"
-                  flexDirection="column"
-                  justifyContent="center"
-                  marginTop={{ base: '3', sm: '0' }}>
-                 
-                  <Text
-                    as="p"
-                    marginTop="2"
-                    fontSize="lg">
-                    {itemDetails.title}
-                  </Text>
-                  <BlogAuthor name="Updated at" date={itemDetails.updatedAt} />
-                  <br/>
+                  backgroundSize="20px 20px"
+                  opacity="0.4"
+                  height="100%"
+                />
+              </Box>
+            </Box>
+            <Box
+              display="flex"
+              flex="1"
+              flexDirection="column"
+              justifyContent="center"
+              marginTop={{ base: '3', sm: '0' }}>
+             
+              <Heading as="p" marginTop="2" fontSize="xl">
+                Title:
+                {item.title}
+              </Heading>
 
-                  <Flex gap="20px" cursor={'pointer'}>
-                    <Box fontSize={30}>
-                    <AiFillLike/>
-                    </Box>
-                  
-                  <Box fontSize={30}>
-                  <AiFillDislike/>
-                  </Box>
-                  
-                  </Flex>
-                  
-                </Box>
-              </Box>  
-            ))
+              <Text  as="p" marginTop="2" fontSize="lg">
+                {item.description}
+              </Text>
+
+              <Text  as="p" marginTop="2" fontSize="lg">
+                Game :
+                <span style={{fontWeight:"bold"}}>
+                {item.game}
+                </span>
+              </Text>
+
+              <Text  as="p" marginTop="2" fontSize="lg">
+                Total_Player_Limit :
+                <span style={{fontWeight:"bold"}}>
+                {item.total_player}
+                </span>
+              </Text>
+
+              <Text  as="p" marginTop="2" fontSize="lg">
+                Start_Time :
+                <span style={{fontWeight:"bold"}}>
+                {item.start_time.hours}:
+                {item.start_time.minutes}:
+                {item.start_time.seconds}
+                </span>
+              </Text>
+
+              <BlogAuthor name="Created at" date={item.updatedAt} />
+             
+            </Box>
+          </Box> 
+          ))
+        }
+               
+           
         
 
       </Container>

@@ -14,5 +14,18 @@ eventhomeRouter.get("/",async(req,res)=>{
 
 })
 
+eventhomeRouter.get("/:id",async(req,res)=>{
+    const ID=req.params.id;
+    try{
+     let data=await EventModel.find({"_id":ID})
+     res.send(data)
+    }
+    catch(err){
+        console.log(err)
+    }
+
+})
+
+
 
 module.exports={eventhomeRouter}
