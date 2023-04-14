@@ -42,7 +42,7 @@ const handleSignup=()=>{
     else{
         axios.post("http://localhost:4000/register",payload)
         .then((res)=>{
-            console.log(res)
+            console.log(res.data)
             toast({
                 title: 'Sign up Successfully done',
                 description: "Please login now",
