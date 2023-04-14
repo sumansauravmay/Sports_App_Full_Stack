@@ -4,16 +4,16 @@ const { EventModel } = require("../models/event.model");
 const eventRouter=express.Router();
 const jwt=require("jsonwebtoken");
 
-eventRouter.get("/",async(req,res)=>{
-    try{
-     let data=await EventModel.find()
-     res.send(data)
-    }
-    catch(err){
-        console.log(err)
-    }
+// eventRouter.get("/",async(req,res)=>{
+//     try{
+//      let data=await EventModel.find()
+//      res.send(data)
+//     }
+//     catch(err){
+//         console.log(err)
+//     }
 
-})
+// })
 
 eventRouter.post("/post",async(req,res)=>{
     const payload=req.body;
