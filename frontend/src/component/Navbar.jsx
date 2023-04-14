@@ -42,22 +42,6 @@ const Navbar = () => {
       navigate("/login")
     }
 
-    //allpost
-    const hanldeallPost=()=>{
-if(token){
-  navigate("/allpost")
-}
-else{
-  toast({
-    title: 'Login First',
-    description: "You are redirectd to Login Page",
-    status: 'success',
-    duration: 9000,
-    isClosable: true,
-  })
-  navigate("/login")
-}
-    }
 
     //new Post
     const hanldeallPost2=()=>{
@@ -113,8 +97,10 @@ else{
                 {/* </Link> */}
                 </Heading>
 
-                <Heading w={40} onClick={hanldeallPost} cursor={'pointer'}>
+                <Heading w={40} cursor={'pointer'}>
+                    <Link to="/">
             All Event
+            </Link>
                 </Heading>
             
             <Flex alignItems={'center'}>
