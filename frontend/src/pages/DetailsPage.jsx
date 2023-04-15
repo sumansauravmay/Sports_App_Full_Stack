@@ -1,17 +1,18 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
 import axios from "axios";
-import {AiFillLike,AiFillDislike } from "react-icons/ai";
+// import {AiFillLike,AiFillDislike } from "react-icons/ai";
 import {
-    Box,Flex, 
+    Box,
     Heading,
     Link,
     Image,
     Text,
     HStack,
-    Container,
-    Button,
+    Container
   } from '@chakra-ui/react';
+import Navbar from '../component/Navbar';
+import Footer from '../component/Footer';
 
   export const BlogAuthor = (props) => {
     return (
@@ -47,7 +48,7 @@ React.useEffect(()=>{
 
   return (
     <div>
-
+<Navbar/>
 <Container maxW={'7xl'} p="12">
         <Heading as="h1">Details of Event</Heading>
         {
@@ -117,13 +118,17 @@ React.useEffect(()=>{
                 </span>
               </Text>
 
-              <Text  as="p" marginTop="2" fontSize="lg">
-                Start_Time :
+              <Text  as="p" marginTop="2" fontSize="lg">{
+                item.start_time?
                 <span style={{fontWeight:"bold"}}>
+                 Start_Time:
                 {item.start_time.hours}:
                 {item.start_time.minutes}:
                 {item.start_time.seconds}
                 </span>
+                :""
+              }
+                
               </Text>
 
               <BlogAuthor name="Created at" date={item.updatedAt} />
@@ -137,7 +142,7 @@ React.useEffect(()=>{
         
 
       </Container>
-
+<Footer/>
     </div>
   )
 }

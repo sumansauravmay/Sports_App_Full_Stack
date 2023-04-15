@@ -6,13 +6,13 @@ const eventSchema=mongoose.Schema({
     total_player:Number,
     start_time: {
         hours: {
-            type: Number, required: true, min: 0, max: 23
+            type: Number, min: 0, max: 23
         },
         minutes: {
-            type: Number, required: true, min: 0, max: 59
+            type: Number, min: 0, max: 59
         },
         seconds: {
-            type: Number, required: true, min: 0, max: 59
+            type: Number, min: 0, max: 59
         }
     },
     userID:String

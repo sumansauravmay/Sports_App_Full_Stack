@@ -42,11 +42,11 @@ const Navbar = () => {
       navigate("/login")
     }
 
-
-    //new Post
+    
+    //add new event
     const hanldeallPost2=()=>{
       if(token){
-        navigate("/post")
+        navigate("/new_event")
       }
       else{
         toast({

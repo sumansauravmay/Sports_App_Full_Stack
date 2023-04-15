@@ -3,10 +3,10 @@ import Navbar from '../component/Navbar';
 import Footer from '../component/Footer';
 import axios from "axios";
 import { Link } from 'react-router-dom';
-import {AiFillLike,AiFillDislike } from "react-icons/ai";
-import { Center, Container, useToast } from '@chakra-ui/react';
-import { Text,Button,Stack,Image,Heading,Divider,ButtonGroup,Flex } from '@chakra-ui/react'
-import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
+// import {AiFillLike,AiFillDislike } from "react-icons/ai";
+import { Container, useToast } from '@chakra-ui/react';
+import { Text,Button,Image,Heading,Divider,ButtonGroup } from '@chakra-ui/react'
+import { Card, CardBody, CardFooter } from '@chakra-ui/react'
 
 const Home = () => {
 const [data,setData]=useState([])
@@ -61,7 +61,7 @@ const [data,setData]=useState([])
       </Link>
 
 
-      <Button variant='solid' colorScheme='blue'>
+      <Button variant='solid' colorScheme='red'>
         Delete Event
       </Button>
     </ButtonGroup>

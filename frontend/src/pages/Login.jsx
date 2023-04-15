@@ -47,7 +47,7 @@ const handleLogin=()=>{
                 duration: 9000,
                 isClosable: true,
               })
-            //   localStorage.setItem("token",JSON.stringify(res.data.token))
+              localStorage.setItem("token",JSON.stringify(res.data.token))
             //   localStorage.setItem("userid",JSON.stringify(res.data.userID))
             //   localStorage.setItem("username",JSON.stringify(res.data.username))
               navigate("/")
