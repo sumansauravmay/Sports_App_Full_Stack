@@ -66,6 +66,14 @@ const handleLogin=()=>{
         .catch((err)=>{
           console.log(err)
           localStorage.removeItem("token");
+          toast({
+            title: 'Login Failed',
+            description: "Email or Password or both are wrong",
+            status: 'error',
+            duration: 9000,
+            isClosable: true,
+          })
+         
         })
     }
 }

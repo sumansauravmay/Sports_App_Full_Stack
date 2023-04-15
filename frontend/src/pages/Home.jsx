@@ -15,9 +15,10 @@ const [filter,setFilter]=useState("");
 const [searchgame,setSearchgame]=useState("")
 
     const getData=()=>{
+      console.log(filter)
       if(filter!=="")
       {
-        return axios.get(`http://localhost:4000/?_game=${filter}`)
+        return axios.get(`http://localhost:4000/filter/${filter}`)
         .then((res)=>{
           console.log(res.data)
           setData(res.data)
@@ -48,7 +49,6 @@ const [searchgame,setSearchgame]=useState("")
 <Input w="20%" borderColor="black"  mt="10px"
 value={searchgame} onChange={(e)=>setSearchgame(e.target.value)}
 type="text" placeholder="search by game name"/>
-{/* <Button ml="10px" bg={'grey'} color={'white'}>Search</Button> */}
 </Center>
 
 {/* filtering */}
@@ -57,7 +57,7 @@ type="text" placeholder="search by game name"/>
 //  value={filter} 
  onChange={(e)=>setFilter(e.target.value)}
  >
-                                <option value="">Search By Game</option>
+                                <option value="">All Game</option>
                                 <option value="Cricket">Cricket</option>
                                 <option value="Football">Football</option>
                                 <option value="Carrom">Carrom</option>
