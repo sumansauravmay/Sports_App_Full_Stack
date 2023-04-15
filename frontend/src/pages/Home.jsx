@@ -46,7 +46,7 @@ const [searchgame,setSearchgame]=useState("")
 
 {/* search */}
 <Center>
-<Input w="20%" borderColor="black"  mt="10px"
+<Input w="30%" borderColor="black"  mt="10px"
 value={searchgame} onChange={(e)=>setSearchgame(e.target.value)}
 type="text" placeholder="search by game name"/>
 </Center>

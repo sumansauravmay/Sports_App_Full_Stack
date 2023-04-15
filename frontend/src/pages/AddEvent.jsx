@@ -119,6 +119,7 @@ const AddEvent = () => {
                           <FormControl id="name">
                             <FormLabel>Game</FormLabel>
                             <Select value={game} onChange={(e)=>setGame(e.target.value)}>
+                              <option value="">Select Game</option>
                                 <option value="Cricket">Cricket</option>
                                 <option value="Football">Football</option>
                                 <option value="Carrom">Carrom</option>

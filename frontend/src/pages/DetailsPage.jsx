@@ -127,12 +127,10 @@ React.useEffect(()=>{
                 {item.start_time.seconds}
                 </span>
                 :""
-              }
-                
+              }                
               </Text>
 
               <BlogAuthor name="Created at" date={item.updatedAt} />
-
               
     <ButtonGroup spacing='2'>
       <Button variant='solid' colorScheme='blue'>

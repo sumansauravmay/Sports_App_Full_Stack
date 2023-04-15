@@ -1,32 +1,42 @@
-const mongoose=require("mongoose");
-const eventSchema=mongoose.Schema({
-    title:String,
-    description:String,
-    game:String,
-    total_player:Number,
-    start_time: {
-        hours: {
-            type: Number, min: 0, max: 23
-        },
-        minutes: {
-            type: Number, min: 0, max: 59
-        },
-        seconds: {
-            type: Number, min: 0, max: 59
-        }
-    },
-    userID:String
-},
-{
-    timestamps:true
-}
+const mongoose = require("mongoose");
+const eventSchema = mongoose.Schema(
+  {
+    title: String,
+    description: String,
+    game: String,
+    total_player: Number,
+    count: Number,
+    
+    // start_time: {
+    //   hours: {
+    //     type: Number,
+    //     min: 0,
+    //     max: 23,
+    //   },
+    //   minutes: {
+    //     type: Number,
+    //     min: 0,
+    //     max: 59,
+    //   },
+    //   seconds: {
+    //     type: Number,
+    //     min: 0,
+    //     max: 59,
+    //   },
+    // },
+    userID: String,
 
-)
+    players: [{ type: mongoose.Schema.Types.ObjectId, ref: "user" }],
+  },
+  {
+    versionKey:false,
+    timestamps: true,
+  }
+);
 
-const EventModel=mongoose.model("events",eventSchema)
+const EventModel = mongoose.model("events", eventSchema);
 
-module.exports={EventModel}
-
+module.exports = { EventModel };
 
 // "title":"Crack Football",
 //     "description":"There are 11 players",
@@ -37,5 +47,3 @@ module.exports={EventModel}
 //         "minutes": 0,
 //         "seconds": 0
 //     }
-
-
