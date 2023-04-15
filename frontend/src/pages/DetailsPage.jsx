@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import axios from "axios";
 // import {AiFillLike,AiFillDislike } from "react-icons/ai";
 import {
-    Box,
+    Box,Button,ButtonGroup,
     Heading,
     Link,
     Image,
@@ -132,7 +132,21 @@ React.useEffect(()=>{
               </Text>
 
               <BlogAuthor name="Created at" date={item.updatedAt} />
-             
+
+              
+    <ButtonGroup spacing='2'>
+      <Button variant='solid' colorScheme='blue'>
+        View Participant
+      </Button>
+     
+      <Button variant='solid' colorScheme='green' 
+      // onClick={`/${item._id}`}
+      >
+        Join
+      </Button>
+    </ButtonGroup>
+ 
+
             </Box>
           </Box> 
           ))

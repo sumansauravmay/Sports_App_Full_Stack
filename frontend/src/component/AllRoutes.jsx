@@ -15,6 +15,7 @@ const AllRoutes = () => {
     <Route path="/:id" element={<DetailsPage/>}></Route>
     <Route path="/update" element={<AddEvent/>}></Route>
     <Route path="/new_event" element={<AddEvent/>}></Route> 
+    {/* <Route path="/:id" element={<DetailsPage/>}></Route> */}
 </Routes>
   )
 }

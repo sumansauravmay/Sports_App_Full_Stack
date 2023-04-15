@@ -100,11 +100,11 @@ const AddEvent = () => {
                               _hover={{
                                 borderRadius: 'gray.300',
                               }}
-                              placeholder="Max Length 300"
+                              placeholder="Title"
                             />
                           </FormControl>
 
-                          <FormControl id="name">
+                          <FormControl id="description">
                             <FormLabel>Description</FormLabel>
                             <Input
                             value={description} onChange={(e)=>setDescription(e.target.value)}
@@ -112,7 +112,7 @@ const AddEvent = () => {
                               _hover={{
                                 borderRadius: 'gray.300',
                               }}
-                              placeholder="Max Length 300"
+                              placeholder="Small Description"
                             />
                           </FormControl>
 
@@ -135,7 +135,7 @@ const AddEvent = () => {
                               _hover={{
                                 borderRadius: 'gray.300',
                               }}
-                              placeholder="Max Length 300"
+                              placeholder="Player Limit"
                             />
                           </FormControl>
 

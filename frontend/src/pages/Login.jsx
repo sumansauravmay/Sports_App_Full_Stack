@@ -23,6 +23,9 @@ const Login = () => {
     const [password,setPassword]=useState("");
     const navigate=useNavigate()
 
+
+
+
 const handleLogin=()=>{
     const payload={
         email,password
@@ -36,23 +39,34 @@ const handleLogin=()=>{
             isClosable: true,
           })
     }
+    
     else{
         axios.post("http://localhost:4000/login",payload)
         .then((res)=>{
             console.log(res.data)
-            toast({
+        
+              localStorage.setItem("token",JSON.stringify(res.data.token))
+            //   localStorage.setItem("userid",JSON.stringify(res.data.userID))
+            //   localStorage.setItem("username",JSON.stringify(res.data.username))
+            let token=JSON.parse(localStorage.getItem("token"));
+           
+            if(token)
+            {
+              toast({
                 title: 'Login Successfully',
                 description: "You are redirectd to all posts",
                 status: 'success',
                 duration: 9000,
                 isClosable: true,
               })
-              localStorage.setItem("token",JSON.stringify(res.data.token))
-            //   localStorage.setItem("userid",JSON.stringify(res.data.userID))
-            //   localStorage.setItem("username",JSON.stringify(res.data.username))
               navigate("/")
+            }
+            
         })
-        .catch((err)=>console.log(err))
+        .catch((err)=>{
+          console.log(err)
+          localStorage.removeItem("token");
+        })
     }
 }
 

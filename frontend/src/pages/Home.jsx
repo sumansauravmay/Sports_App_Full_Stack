@@ -5,29 +5,68 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 // import {AiFillLike,AiFillDislike } from "react-icons/ai";
 import { Container, useToast } from '@chakra-ui/react';
-import { Text,Button,Image,Heading,Divider,ButtonGroup } from '@chakra-ui/react'
+import { Text,Button,Image,Heading,Divider,ButtonGroup,Input,
+  Select,Center } from '@chakra-ui/react';
 import { Card, CardBody, CardFooter } from '@chakra-ui/react'
 
 const Home = () => {
-const [data,setData]=useState([])
+const [data,setData]=useState([]);
+const [filter,setFilter]=useState("");
+const [searchgame,setSearchgame]=useState("")
 
     const getData=()=>{
-        return axios.get("http://localhost:4000/")
+      if(filter!=="")
+      {
+        return axios.get(`http://localhost:4000/?_game=${filter}`)
+        .then((res)=>{
+          console.log(res.data)
+          setData(res.data)
+      })
+      }
+        else{
+          return axios.get(`http://localhost:4000/`)
+          .then((res)=>{
+            console.log(res.data)
+            setData(res.data)
+        })
+        }
   
       }
 
     useEffect(()=>{
-        getData()
-        .then((res)=>{
-            console.log(res.data)
-            setData(res.data)
-        })
-    },[])
+        getData(filter)
+       
+    },[filter])
 
 
   return (
     <>
     <Navbar/>
+
+{/* search */}
+<Center>
+<Input w="20%" borderColor="black"  mt="10px"
+value={searchgame} onChange={(e)=>setSearchgame(e.target.value)}
+type="text" placeholder="search by game name"/>
+{/* <Button ml="10px" bg={'grey'} color={'white'}>Search</Button> */}
+</Center>
+
+{/* filtering */}
+<Center>
+<Select w="20%" mt="20px" borderColor="black"
+//  value={filter} 
+ onChange={(e)=>setFilter(e.target.value)}
+ >
+                                <option value="">Search By Game</option>
+                                <option value="Cricket">Cricket</option>
+                                <option value="Football">Football</option>
+                                <option value="Carrom">Carrom</option>
+                                <option value="Badminton">Badminton</option>
+                                
+                            </Select>
+</Center>
+
+
 
 
     <Card maxW='sm'>
@@ -37,7 +76,18 @@ const [data,setData]=useState([])
   >
 
     {
-        data.map((item)=>(
+        data
+        .filter((item)=>{
+          if(searchgame==="All")
+          {
+            return item;
+          }
+          else if(item.game.toLowerCase().includes(searchgame.toLowerCase()))
+          {
+            return item;
+          }
+        })
+        .map((item)=>(
             
             <Container key={item._id}
              mt='6' spacing='3'>
@@ -47,6 +97,10 @@ const [data,setData]=useState([])
       borderRadius='lg'
     />
             <Heading size='md'>{item.title}</Heading>
+            <Text>
+              Game:{item.game}
+            </Text>
+           
             <Text>
               Total_Player:{item.total_player}
             </Text>
