@@ -43,7 +43,7 @@ const DetailsPage = () => {
   const [itemDetails, setItemDetails] = React.useState([]);
 
   React.useEffect(() => {
-    axios.get(`http://localhost:4000/${id}`).then((res) => {
+    axios.get(`https://outrageous-bass-peplum.cyclic.app/${id}`).then((res) => {
       setItemDetails(res.data);
       console.log(res.data);
     });
@@ -62,7 +62,7 @@ const DetailsPage = () => {
 
   const handlejoinfunc = (_id) => {
     axios
-      .patch(`http://localhost:4000/addplayers/${_id}`, {token:token}
+      .patch(`https://outrageous-bass-peplum.cyclic.app/addplayers/${_id}`, {token:token}
  
       )
       .then((res) => {

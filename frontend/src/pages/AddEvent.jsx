@@ -58,7 +58,7 @@ const AddEvent = () => {
       });
     } else {
       axios
-        .post("http://localhost:4000/post", payload, {
+        .post("https://outrageous-bass-peplum.cyclic.app/post", payload, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
-import DetailsPage from "./DetailsPage";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import { useScroll } from "framer-motion";
@@ -15,7 +14,7 @@ const DetailsPlayer = () => {
 
   const getData = () => {
     return axios
-      .get(`http://localhost:4000/playerdel/${id}`, {
+      .get(`https://outrageous-bass-peplum.cyclic.app/playerdel/${id}`, {
         headers: {
           Authorization:`Bearer ${token}`,
         },

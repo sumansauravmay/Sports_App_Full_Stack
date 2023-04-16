@@ -18,14 +18,14 @@ const [searchgame,setSearchgame]=useState("")
       console.log(filter)
       if(filter!=="")
       {
-        return axios.get(`http://localhost:4000/filter/${filter}`)
+        return axios.get(`https://outrageous-bass-peplum.cyclic.app/filter/${filter}`)
         .then((res)=>{
           console.log(res.data)
           setData(res.data)
       })
       }
         else{
-          return axios.get(`http://localhost:4000/`)
+          return axios.get(`https://outrageous-bass-peplum.cyclic.app/`)
           .then((res)=>{
             console.log(res.data)
             setData(res.data)

@@ -38,7 +38,7 @@ const Login = () => {
       });
     } else {
       axios
-        .post("http://localhost:4000/login", payload)
+        .post("https://outrageous-bass-peplum.cyclic.app/login", payload)
         .then((res) => {
           console.log(res.data);
           localStorage.setItem("token", JSON.stringify(res.data.token));

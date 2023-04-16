@@ -39,7 +39,7 @@ const Signup = () => {
         isClosable: true,
       });
     } else {
-      axios.post("http://localhost:4000/register", payload).then((res) => {
+      axios.post("https://outrageous-bass-peplum.cyclic.app/register", payload).then((res) => {
         console.log(res.data);
         toast({
           title: "Sign up Successfully done",
