@@ -31,7 +31,7 @@
   <img src="https://i.postimg.cc/sgTZd54P/netlify.jpg" alt="netlify" />
 </p>
 
-<h3 align="center"><a href="https://frontend-meenakshi176.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://fancy-babka-1b31b1.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
 
 <br/>
 
