@@ -5,6 +5,7 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import { useScroll } from "framer-motion";
 import axios from "axios";
+import { Heading } from "@chakra-ui/react";
 
 const DetailsPlayer = () => {
   const [data, setData] = useState([]);
@@ -31,6 +32,8 @@ const DetailsPlayer = () => {
   return (
     <>
       <Navbar />
+
+      <Heading>Total Joined Participant = {data.length}</Heading>
       <table>
         <thead>
           <tr>

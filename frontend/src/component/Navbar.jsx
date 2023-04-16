@@ -79,6 +79,7 @@ const Navbar = () => {
         });
 
         localStorage.removeItem("token");
+        localStorage.removeItem("id");
         localStorage.removeItem("userid");
         localStorage.removeItem("username");
       });

@@ -6,26 +6,10 @@ const eventSchema = mongoose.Schema(
     game: String,
     total_player: Number,
     count: Number,
-    
-    // start_time: {
-    //   hours: {
-    //     type: Number,
-    //     min: 0,
-    //     max: 23,
-    //   },
-    //   minutes: {
-    //     type: Number,
-    //     min: 0,
-    //     max: 59,
-    //   },
-    //   seconds: {
-    //     type: Number,
-    //     min: 0,
-    //     max: 59,
-    //   },
-    // },
+    hours:{type: Number,min: 0,max: 23},
+    minutes:{type: Number,min: 0,max: 59},
+    seconds:{type: Number,min: 0,max: 59},
     userID: String,
-
     players: [{ type: mongoose.Schema.Types.ObjectId, ref: "user" }],
   },
   {

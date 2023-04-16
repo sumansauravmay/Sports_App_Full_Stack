@@ -25,7 +25,9 @@ const AddEvent = () => {
   const [description, setDescription] = useState("");
   const [game, setGame] = useState("");
   const [total_player, setTotal_player] = useState();
-  // const [start_time,setStart_time]=useState({})
+  const [hours, setHours] = useState();
+  const [minutes, setMinutes] = useState();
+  const [seconds, setSeconds] = useState();
 
   let token = JSON.parse(localStorage.getItem("token"));
 
@@ -37,6 +39,9 @@ const AddEvent = () => {
       description,
       game,
       total_player,
+      hours,
+      minutes,
+      seconds
     };
     if (
       title === "" ||
@@ -156,18 +161,45 @@ const AddEvent = () => {
                             placeholder="Player Limit"
                           />
                         </FormControl>
+                        {/* //timers */}
+                        <FormControl id="player">
+                          <FormLabel>hours</FormLabel>
+                          <Input
+                            value={hours}
+                            onChange={(e) => setHours(e.target.value)}
+                            borderColor="gray.300"
+                            _hover={{
+                              borderRadius: "gray.300",
+                            }}
+                            placeholder="Put Hours"
+                          />
+                        </FormControl>
 
-                        {/* <FormControl id="player">
-                            <FormLabel>Max_Player</FormLabel>
-                            <Input
-                            value={start_time} onChange={(e)=>setStart_time(e.target.value)}
-                              borderColor="gray.300"
-                              _hover={{
-                                borderRadius: 'gray.300',
-                              }}
-                              placeholder="Max Length 300"
-                            />
-                          </FormControl> */}
+                        <FormControl id="player">
+                          <FormLabel>Minutes</FormLabel>
+                          <Input
+                            value={minutes}
+                            onChange={(e) => setMinutes(e.target.value)}
+                            borderColor="gray.300"
+                            _hover={{
+                              borderRadius: "gray.300",
+                            }}
+                            placeholder="Put Minutes"
+                          />
+                        </FormControl>
+
+                        <FormControl id="player">
+                          <FormLabel>Seconds</FormLabel>
+                          <Input
+                            value={seconds}
+                            onChange={(e) => setSeconds(e.target.value)}
+                            borderColor="gray.300"
+                            _hover={{
+                              borderRadius: "gray.300",
+                            }}
+                            placeholder="Put Seconds"
+                          />
+                        </FormControl>
 
                         <FormControl id="name" float="right">
                           <Button

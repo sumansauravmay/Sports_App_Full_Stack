@@ -22,7 +22,7 @@ eventRouter.post("/post", async (req, res) => {
     await new_event.save();
     res.send("Created the event!!");
   } catch (err) {
-    console.log(err);
+    return res.status(404).send({ message: `${error.message}` });
   }
 });
 
@@ -42,7 +42,7 @@ eventRouter.delete("/delete/:id", async (req, res) => {
       res.send("Deleted the event");
     }
   } catch (err) {
-    console.log(err);
+    return res.status(404).send({ message: `${error.message}` });
   }
 });
 
@@ -59,7 +59,7 @@ eventRouter.patch("/addplayers/:id", async (req, res) => {
       { $push: { players: userId } },
       { new: true }
     );
-    console.log(event);
+    // console.log(event);
     return res.status(200).send("added the users");
   } catch (error) {
     return res.status(404).send({ message: `${error.message}` });
@@ -72,7 +72,7 @@ eventRouter.get("/playerdel/:id", async (req, res) => {
     let data = await EventModel.findOne({ _id: id }).populate("players");
     res.send(data);
   } catch (err) {
-    console.log(err);
+    return res.status(404).send({ message: `${error.message}` });
   }
 });
 
