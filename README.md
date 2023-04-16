@@ -76,15 +76,23 @@ On this page, you have to login with your registered email and password .you can
 
 ![Login](https://i.postimg.cc/gjLFjF10/login-2.jpg)
 
-### All Event Page -
+### All Event -
 
 Here users can see all the events.
  
  ![All_Events](https://i.postimg.cc/fTGNpLpg/home.jpg)
 
-### Add new Posts -
+### Add new Event -
 
 ![Add_New_Event](https://i.postimg.cc/02RvHjLX/newEvent.jpg)
+
+### Event Details -
+
+![Event_Details](https://i.postimg.cc/rFK4gn2N/eventdet.jpg)
+
+### Participant details -
+
+![Participant_Details](https://i.postimg.cc/KzhXpsWk/participant.jpg)
 
 ### Footer Page -
 
