@@ -41,7 +41,6 @@ const Login = () => {
         .post("http://localhost:4000/login", payload)
         .then((res) => {
           console.log(res.data);
-
           localStorage.setItem("token", JSON.stringify(res.data.token));
           let token = JSON.parse(localStorage.getItem("token"));
 
