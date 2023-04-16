@@ -69,8 +69,7 @@ eventRouter.patch("/addplayers/:id", async (req, res) => {
 eventRouter.get("/playerdel/:id", async (req, res) => {
   const id = req.params.id;
   try {
-    let data = await EventModel.findOne({ _id: id })
-    .populate("players");
+    let data = await EventModel.findOne({ _id: id }).populate("players");
     res.send(data);
   } catch (err) {
     console.log(err);

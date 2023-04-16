@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+  table,td,th{
+    box-shadow:rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    text-align:left;
+  }
+  table{
+    border-collapse: collapse;
+    width:90%;
+    margin:auto;
+    margin-top:50px;
+  }
+  th,td{
+    padding:15px;
+  }
+  tr>th{
+    background-color:teal;
+    color:white;
+  }
+
+
+
+

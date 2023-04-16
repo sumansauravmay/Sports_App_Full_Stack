@@ -1,10 +1,10 @@
-import './App.css';
-import AllRoutes from './component/AllRoutes';
+import "./App.css";
+import AllRoutes from "./component/AllRoutes";
 
 function App() {
   return (
     <div className="App">
-      <AllRoutes/>
+      <AllRoutes />
     </div>
   );
 }

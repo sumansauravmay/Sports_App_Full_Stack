@@ -1,6 +1,7 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 // import {AiFillLike,AiFillDislike } from "react-icons/ai";
 import {
     Box,Button,ButtonGroup,
@@ -9,7 +10,8 @@ import {
     Image,
     Text,
     HStack,
-    Container
+    Container,
+    AlertTitle
   } from '@chakra-ui/react';
 import Navbar from '../component/Navbar';
 import Footer from '../component/Footer';
@@ -33,7 +35,7 @@ import Footer from '../component/Footer';
 
 
 const DetailsPage = () => {
-
+  const navigate = useNavigate();
     const {id}=useParams()
 const [itemDetails,setItemDetails]=React.useState([]);
 
@@ -44,6 +46,17 @@ React.useEffect(()=>{
             console.log(res.data)
         })
 },[id])
+
+const handletoseeplayer=(id)=>{
+  
+  navigate("/allparticipate");
+localStorage.setItem("id",JSON.stringify(id))
+}
+
+const handlejoinfunc=(_id)=>{
+  axios.patch(`http://localhost:4000/${id}`)
+}
+
 
 
   return (
@@ -133,12 +146,17 @@ React.useEffect(()=>{
               <BlogAuthor name="Created at" date={item.updatedAt} />
               
     <ButtonGroup spacing='2'>
-      <Button variant='solid' colorScheme='blue'>
+
+      
+      <Button variant='solid' colorScheme='blue'
+      onClick={()=>handletoseeplayer(item._id)}
+      >
         View Participant
       </Button>
-     
+      
+
       <Button variant='solid' colorScheme='green' 
-      // onClick={`/${item._id}`}
+      onClick={()=>handlejoinfunc(item._id)}
       >
         Join
       </Button>

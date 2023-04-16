@@ -115,9 +115,9 @@ type="text" placeholder="search by game name"/>
       </Link>
 
 
-      <Button variant='solid' colorScheme='red'>
+      {/* <Button variant='solid' colorScheme='red'>
         Delete Event
-      </Button>
+      </Button> */}
     </ButtonGroup>
   </CardFooter>
 
