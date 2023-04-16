@@ -40,10 +40,14 @@
 -   Landing Page & Footer.
 -   Login and Signup Page with Express,mongodb,Nodejs & React.
 -   Logout.
--   All Posts in brief manner with Express,mongodb,Nodejs & React.
--   Add New Post.
+-   All Events in brief manner with Express,mongodb,Nodejs & React.
+-   Details of Event
+-   Add New Event.
 -   Join to the event
 -   view joined Participants
+-   Token Based Authentication
+-   Search bu game name
+-   Filter by game
 
 ## 🚀 Team Member:-
 
@@ -64,23 +68,23 @@ All pages are responsive.
 
 On this page, you can register a user. If the user is already registered, you can simply sign in by providing valid details of the user. 
 
-![signup](https://i.postimg.cc/t4zBRfws/signup-2.jpg)
+![signup](https://i.postimg.cc/X7vB22dY/signup-2.jpg)
 
-###  Sign in Page - 
+###  Log in Page - 
 
 On this page, you have to login with your registered email and password .you can simply sign in by providing valid details of the user. 
 
-![Login](https://i.postimg.cc/C51gJk8N/login-2.jpg)
+![Login](https://i.postimg.cc/gjLFjF10/login-2.jpg)
 
-### All Posts Page -
+### All Event Page -
 
-Here users can see all the posts. If he is not loged In, It will redirect to Log In Page and ask to Log In first. You can delete your posts.
+Here users can see all the events.
  
- ![All_Posts](https://i.postimg.cc/mrzV3DhH/allpost.jpg)
+ ![All_Events](https://i.postimg.cc/NGkP80kw/home-page.jpg)
 
 ### Add new Posts -
 
-![Add_New_Post](https://i.postimg.cc/tTD1Ydyt/new-post.jpg)
+![Add_New_Event](https://i.postimg.cc/qMCwbM8R/new-event.jpg)
 
 ### Footer Page -
 
