@@ -102,7 +102,7 @@ type="text" placeholder="search by game name"/>
             </Text>
            
             <Text>
-              Total_Player:{item.total_player}
+              Total_Player_limit :{item.total_player}
             </Text>
            
             <Divider />

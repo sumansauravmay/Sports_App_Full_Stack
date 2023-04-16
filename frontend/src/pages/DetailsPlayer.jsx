@@ -17,7 +17,7 @@ const DetailsPlayer = () => {
     return axios
       .get(`http://localhost:4000/playerdel/${id}`, {
         headers: {
-          Authorization: token,
+          Authorization:`Bearer ${token}`,
         },
       })
       .then((res) => {
@@ -33,7 +33,9 @@ const DetailsPlayer = () => {
     <>
       <Navbar />
 
-      <Heading>Total Joined Participant = {data.length}</Heading>
+      <Heading> {data.length===0?"No Participation":<span>
+      Total Joined Participant ={data.length}
+      </span>}</Heading>
       <table>
         <thead>
           <tr>

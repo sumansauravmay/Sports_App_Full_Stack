@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -37,6 +37,7 @@ export const BlogAuthor = (props) => {
 const token = JSON.parse(localStorage.getItem("token"));
 
 const DetailsPage = () => {
+  const [text,setText]=useState("Join")
   const navigate = useNavigate();
   const { id } = useParams();
   const [itemDetails, setItemDetails] = React.useState([]);
@@ -49,20 +50,25 @@ const DetailsPage = () => {
   }, [id]);
 
   const handletoseeplayer = (id) => {
-    navigate("/allparticipate");
-    localStorage.setItem("id", JSON.stringify(id));
+    if(token){
+      navigate("/allparticipate");
+      localStorage.setItem("id", JSON.stringify(id));
+    }
+   else{
+    alert("you are not loged in")
+    navigate("/login");
+   }
   };
 
   const handlejoinfunc = (_id) => {
     axios
-      .patch(`http://localhost:4000/addplayers/${_id}`, {
-        headers: {
-          Authorization: token,
-        },
-      })
+      .patch(`http://localhost:4000/addplayers/${_id}`, {token:token}
+ 
+      )
       .then((res) => {
         console.log(res.data);
-      });
+        setText("Joined")
+      }); 
   };
 
   return (
@@ -113,10 +119,13 @@ const DetailsPage = () => {
               justifyContent="center"
               marginTop={{ base: "3", sm: "0" }}
             >
-              <Heading as="p" marginTop="2" fontSize="xl">
+              <Text w="100%" as="p" marginTop="2" fontSize="xl">
                 Title:
+                <span style={{ fontWeight: "bold" }}>
                 {item.title}
-              </Heading>
+                </span>
+                
+              </Text>
 
               <Text as="p" marginTop="2" fontSize="lg">
                 {item.description}
@@ -134,9 +143,9 @@ const DetailsPage = () => {
               <Text as="p" marginTop="2" fontSize="lg">
                  
                   <span style={{ fontWeight: "bold" }}>
-                    Start_Time:
-                    {item.hours}:{item.minutes}:
+                    Start_Time : {item.hours} : {item.minutes} : 
                     {item.seconds}
+                  
                   </span>
                 
               </Text>
@@ -157,7 +166,7 @@ const DetailsPage = () => {
                   colorScheme="green"
                   onClick={() => handlejoinfunc(item._id)}
                 >
-                  Join
+                  {text}
                 </Button>
               </ButtonGroup>
             </Box>

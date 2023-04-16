@@ -16,7 +16,7 @@ app.use(express.json())
 
 app.use("/",userRouter)
 app.use("/",eventhomeRouter)
-app.use(authenticate);
+// app.use(authenticate);
 app.use("/",eventRouter)
 
 app.listen(process.env.port,async()=>{

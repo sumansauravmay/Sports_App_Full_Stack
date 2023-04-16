@@ -26,13 +26,13 @@ const Navbar = () => {
   const toast = useToast();
 
   let token = JSON.parse(localStorage.getItem("token"));
-  let userid = JSON.parse(localStorage.getItem("userid"));
+
 
   //logout
   const handleLogout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("userid");
-    localStorage.removeItem("username");
+    localStorage.removeItem("id");
+
     toast({
       title: "Logout Successfull",
       description: "You are redirectd to Login Page",
@@ -59,31 +59,6 @@ const Navbar = () => {
     }
   };
 
-  //delete Account
-  const handleDelete = (userid) => {
-    axios
-      .delete(`https://crimson-coyote-gear.cyclic.app/delete_user/${userid}`, {
-        headers: {
-          Authorization: token,
-        },
-      })
-      .then((res) => {
-        navigate("/login");
-        window.location.reload();
-        toast({
-          title: "User Deleted successfully",
-          description: "You are redirectd to all posts",
-          status: "success",
-          duration: 9000,
-          isClosable: true,
-        });
-
-        localStorage.removeItem("token");
-        localStorage.removeItem("id");
-        localStorage.removeItem("userid");
-        localStorage.removeItem("username");
-      });
-  };
 
   return (
     <>
@@ -132,7 +107,7 @@ const Navbar = () => {
                   <br />
                   <Center>
                     <Heading>
-                      {/* {username?username:"Username"} */}
+                     
                       Username
                     </Heading>
                   </Center>
@@ -150,9 +125,7 @@ const Navbar = () => {
                   <MenuItem onClick={handleLogout}>
                     {token ? "Logout" : ""}
                   </MenuItem>
-                  <MenuItem onClick={() => handleDelete(userid)}>
-                    {token ? "Delete Account" : ""}
-                  </MenuItem>
+                 
                 </MenuList>
               </Menu>
             </Stack>

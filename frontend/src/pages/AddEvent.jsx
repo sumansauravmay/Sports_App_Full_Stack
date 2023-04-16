@@ -41,7 +41,7 @@ const AddEvent = () => {
       total_player,
       hours,
       minutes,
-      seconds
+      seconds,
     };
     if (
       title === "" ||
@@ -60,11 +60,11 @@ const AddEvent = () => {
       axios
         .post("http://localhost:4000/post", payload, {
           headers: {
-            Authorization: token,
+            Authorization: `Bearer ${token}`,
           },
         })
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           window.location.reload();
           toast({
             title: "Posted Successfully",

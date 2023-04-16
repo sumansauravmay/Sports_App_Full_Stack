@@ -48,18 +48,19 @@ eventRouter.delete("/delete/:id", async (req, res) => {
 
 eventRouter.patch("/addplayers/:id", async (req, res) => {
   try {
-    const token = req.headers.authorization;
+    const { token } = req.body;
     const id = req.params.id;
     const decoded = jwt.verify(token, "masai");
     const userId = decoded.userID;
-    //  console.log(id);
-    //  console.log(userId)
+    console.log(id);
+    console.log(userId);
     const event = await EventModel.findByIdAndUpdate(
       { _id: id },
       { $push: { players: userId } },
       { new: true }
     );
-    // console.log(event);
+
+    console.log(event);
     return res.status(200).send("added the users");
   } catch (error) {
     return res.status(404).send({ message: `${error.message}` });
