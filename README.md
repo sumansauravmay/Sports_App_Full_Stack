@@ -2,7 +2,7 @@
 
 ![Logo](https://i.postimg.cc/fLHmLxZC/sports-pic.jpg)
 
-<h3 align="center">It's a Full Stack Social Media Platform with all the major functionalities</h3>
+<h3 align="center">It's a Full Stack Sports Platform with all the major functionalities</h3>
 
 <br/>
 
@@ -28,12 +28,10 @@
 <h4 align="center">Deployed On:</h4>
 
 <p align="center">
-  <img src="https://i.postimg.cc/sgTZd54P/netlify.jpg" alt="vercel" />
+  <img src="https://i.postimg.cc/sgTZd54P/netlify.jpg" alt="netlify" />
 </p>
 
 <h3 align="center"><a href="https://frontend-meenakshi176.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
-
-Tata 1mg is India’s leading consumer health platform. It provides services, including e-pharmacy, diagnostics, e-consultation and health content.
 
 <br/>
 
@@ -43,9 +41,9 @@ Tata 1mg is India’s leading consumer health platform. It provides services, in
 -   Login and Signup Page with Express,mongodb,Nodejs & React.
 -   Logout.
 -   All Posts in brief manner with Express,mongodb,Nodejs & React.
--   Remove Posts.
--    Add New Post.
-
+-   Add New Post.
+-   Join to the event
+-   view joined Participants
 
 ## 🚀 Team Member:-
 
@@ -60,7 +58,7 @@ This is the main landing page of our website. If you want to see the all post or
 
 All pages are responsive.
 
-![landing_page](https://i.postimg.cc/jj5mpt2x/home.jpg)
+![landing_page](https://i.postimg.cc/jdBm8FmH/landing-page.jpg)
 
 ### Sign up Page -
 
