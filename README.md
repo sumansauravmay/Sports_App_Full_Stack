@@ -80,11 +80,11 @@ On this page, you have to login with your registered email and password .you can
 
 Here users can see all the events.
  
- ![All_Events](https://i.postimg.cc/NGkP80kw/home-page.jpg)
+ ![All_Events](https://i.postimg.cc/fTGNpLpg/home.jpg)
 
 ### Add new Posts -
 
-![Add_New_Event](https://i.postimg.cc/qMCwbM8R/new-event.jpg)
+![Add_New_Event](https://i.postimg.cc/02RvHjLX/newEvent.jpg)
 
 ### Footer Page -
 
