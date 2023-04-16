@@ -94,6 +94,10 @@ Here users can see all the events.
 
 ![Participant_Details](https://i.postimg.cc/KzhXpsWk/participant.jpg)
 
+### Joined -
+
+![joined](https://i.postimg.cc/yNBXfmP6/joined.jpg)
+
 ### Footer Page -
 
 On This Page there is info about the site....
