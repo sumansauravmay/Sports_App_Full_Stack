@@ -46,7 +46,7 @@
 -   Join to the event
 -   view joined Participants
 -   Token Based Authentication
--   Search bu game name
+-   Search by game name
 -   Filter by game
 
 ## 🚀 Team Member:-
